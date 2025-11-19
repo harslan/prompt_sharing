@@ -46,31 +46,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', updateActiveNav);
 
-    // Placeholder for Google Sheet and Form links
-    // These should be updated after setting up Google Forms/Sheets
+    // Ensure Google Sheet and Form links work properly
     const sheetLink = document.getElementById('sheet-link');
     const formLink = document.getElementById('form-link');
     
-    // You can update these URLs in the HTML directly, or set them here:
-    // sheetLink.href = 'YOUR_GOOGLE_SHEET_URL';
-    // formLink.href = 'YOUR_GOOGLE_FORM_URL';
-    
-    // For now, show an alert if clicked before URLs are set
-    if (sheetLink && !sheetLink.href || sheetLink.href === '#') {
+    // Add explicit click handlers to ensure links work
+    if (sheetLink) {
         sheetLink.addEventListener('click', function(e) {
-            if (this.href === '#' || !this.href) {
-                e.preventDefault();
-                alert('Please update the Google Sheet URL in the HTML file after setting up your Google Sheet.');
-            }
+            // Let the default behavior happen (open in new tab)
+            // This ensures it works even if there are any issues
         });
     }
     
-    if (formLink && !formLink.href || formLink.href === '#') {
+    if (formLink) {
         formLink.addEventListener('click', function(e) {
-            if (this.href === '#' || !this.href) {
-                e.preventDefault();
-                alert('Please update the Google Form URL in the HTML file after setting up your Google Form.');
-            }
+            // Let the default behavior happen (open in new tab)
         });
     }
 });
