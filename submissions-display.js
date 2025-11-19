@@ -36,12 +36,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Fetch submissions
-    fetch(SCRIPT_URL)
+    // Note: Google Apps Script may redirect, so we need to handle that
+    fetch(SCRIPT_URL, {
+        method: 'GET',
+        redirect: 'follow'
+    })
         .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
+            // Check if response is actually JSON
+            const contentType = response.headers.get('content-type');
+            if (contentType && contentType.includes('application/json')) {
+                return response.json();
             }
-            return response.json();
+            // If redirected or HTML, try to parse as JSON anyway
+            return response.text().then(text => {
+                try {
+                    return JSON.parse(text);
+                } catch (e) {
+                    throw new Error('Invalid JSON response from server');
+                }
+            });
         })
         .then(data => {
             if (data.success && data.submissions && data.submissions.length > 0) {
