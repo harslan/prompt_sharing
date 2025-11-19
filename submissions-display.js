@@ -2,9 +2,8 @@
 // NOTE: Replace SCRIPT_URL below with your Google Apps Script Web App URL after setup
 
 document.addEventListener('DOMContentLoaded', function() {
-    // TODO: Replace with your Google Apps Script Web App URL
-    // Get this URL after deploying the Google Apps Script (see IMPLEMENT_SUBMISSIONS_DISPLAY.md)
-    const SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+    // Google Apps Script Web App URL
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxCbanolthQx1deSlnuL4_yhK4OEhRIC9oRbHEhJGaE9xXhuGOMg4ITuwXggc9NR54JJQ/exec';
     const SHEET_URL = 'https://docs.google.com/spreadsheets/d/1t30ZpqmfuEqtwtVwPln4b8jF1ng7Oo6rEZlkZlqjs-E/view?usp=sharing';
     
     const submissionsContainer = document.getElementById('submissions-container');
