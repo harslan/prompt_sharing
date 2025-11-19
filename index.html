@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAIL Prompt Library - Suffolk University</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>SAIL Prompt Library</h1>
+            <p class="subtitle">Suffolk University Sawyer Business School</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About SAIL Fridays</a></li>
+                <li><a href="#examples">Case Studies</a></li>
+                <li><a href="#browse">Browse Prompts</a></li>
+                <li><a href="#submit">Submit a Prompt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h2>Welcome to the SAIL Prompt Library</h2>
+                <p class="lead">
+                    A curated collection of AI prompts with context, challenges, and solutions 
+                    from Suffolk faculty. Learn from real-world applications and share your own experiences.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#browse" class="btn btn-primary">Browse All Prompts</a>
+                    <a href="#submit" class="btn btn-secondary">Submit Your Prompt</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About SAIL Fridays</h2>
+                <div class="content-grid">
+                    <div class="card">
+                        <h3>What is SAIL?</h3>
+                        <p>
+                            SAIL (Student AI Literacy) Fridays are weekly drop-in sessions where faculty 
+                            come together to explore AI integration in teaching and learning. These sessions 
+                            focus on hands-on problem-solving: bring your challenge, and we'll workshop AI 
+                            approaches together.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3>Why Context Matters</h3>
+                        <p>
+                            Prompts without context lose their value. That's why this library focuses on 
+                            the full story: <strong>What problem were you solving?</strong> 
+                            <strong>How did you approach it?</strong> <strong>What was the outcome?</strong>
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3>Our Approach</h3>
+                        <p>
+                            We believe in learning by doing. SAIL Fridays combine experiential learning 
+                            with a shared resource library, so you can both participate in live sessions 
+                            and explore examples on your own time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="examples" class="section section-alt">
+            <div class="container">
+                <h2>Featured Case Studies</h2>
+                <p class="section-intro">
+                    These examples show the complete journey from challenge to solution. 
+                    Each includes the context, the prompt, and the results.
+                </p>
+                
+                <div class="case-studies">
+                    <article class="case-study">
+                        <div class="case-study-header">
+                            <span class="category">Learning Activities</span>
+                            <h3>AI Student Role-Play for Critical Thinking</h3>
+                        </div>
+                        <div class="case-study-content">
+                            <div class="case-section">
+                                <h4>📋 The Challenge</h4>
+                                <p>
+                                    Students in a business ethics course were struggling to engage with 
+                                    multiple perspectives on complex ethical dilemmas. Traditional discussion 
+                                    formats weren't generating the depth of analysis needed.
+                                </p>
+                            </div>
+                            <div class="case-section">
+                                <h4>💡 The Approach</h4>
+                                <p>
+                                    Created an AI "student" persona that takes a specific position on ethical 
+                                    issues. Students must engage with this AI character, challenge its reasoning, 
+                                    and defend alternative viewpoints.
+                                </p>
+                            </div>
+                            <div class="case-section">
+                                <h4>🤖 The Prompt</h4>
+                                <div class="prompt-box">
+                                    <pre>You are a business student in an ethics course who strongly believes that 
+[SPECIFIC POSITION]. When presented with ethical dilemmas, you always 
+argue from this perspective. Your responses should:
+- Be well-reasoned but somewhat narrow in scope
+- Challenge students to think beyond your position
+- Ask probing questions that reveal assumptions
+- Occasionally concede points when students make compelling arguments
+
+Engage with the following scenario: [SCENARIO]</pre>
+                                </div>
+                            </div>
+                            <div class="case-section">
+                                <h4>✅ The Outcome</h4>
+                                <p>
+                                    Students reported deeper engagement with ethical reasoning. The AI's 
+                                    consistent perspective forced them to articulate their own positions 
+                                    more clearly. Class discussions became more structured and substantive.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="case-study">
+                        <div class="case-study-header">
+                            <span class="category">Assessment</span>
+                            <h3>Rubric-Based Feedback Generation</h3>
+                        </div>
+                        <div class="case-study-content">
+                            <div class="case-section">
+                                <h4>📋 The Challenge</h4>
+                                <p>
+                                    Providing detailed, rubric-aligned feedback on student assignments was 
+                                    time-consuming. Faculty needed a way to generate initial feedback that 
+                                    could be reviewed and personalized.
+                                </p>
+                            </div>
+                            <div class="case-section">
+                                <h4>💡 The Approach</h4>
+                                <p>
+                                    Developed a prompt that uses the course rubric as the evaluation framework. 
+                                    The AI generates structured feedback that faculty can then review, edit, 
+                                    and personalize before sending to students.
+                                </p>
+                            </div>
+                            <div class="case-section">
+                                <h4>🤖 The Prompt</h4>
+                                <div class="prompt-box">
+                                    <pre>You are an expert teaching assistant helping to provide feedback on student work. 
+Use the following rubric to evaluate this assignment:
+
+[RUBRIC CRITERIA]
+
+For each criterion, provide:
+1. A specific strength observed
+2. A specific area for improvement
+3. A concrete suggestion for enhancement
+
+Student submission:
+[STUDENT WORK]
+
+Format your feedback as a constructive, encouraging review that helps the 
+student understand both what they did well and how to improve.</pre>
+                                </div>
+                            </div>
+                            <div class="case-section">
+                                <h4>✅ The Outcome</h4>
+                                <p>
+                                    Faculty saved 40-60% of time on initial feedback generation while 
+                                    maintaining quality. The rubric-based approach ensured consistency 
+                                    across all student evaluations.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="case-study">
+                        <div class="case-study-header">
+                            <span class="category">Course Design</span>
+                            <h3>Adaptive Learning Path Creation</h3>
+                        </div>
+                        <div class="case-study-content">
+                            <div class="case-section">
+                                <h4>📋 The Challenge</h4>
+                                <p>
+                                    Students in an analytics course had varying backgrounds. Some needed 
+                                    foundational review while others were ready for advanced topics. 
+                                    Creating individualized learning paths was impractical at scale.
+                                </p>
+                            </div>
+                            <div class="case-section">
+                                <h4>💡 The Approach</h4>
+                                <p>
+                                    Used AI to generate personalized learning paths based on student 
+                                    self-assessments and performance on diagnostic quizzes. Each path 
+                                    includes recommended readings, practice problems, and project ideas.
+                                </p>
+                            </div>
+                            <div class="case-section">
+                                <h4>🤖 The Prompt</h4>
+                                <div class="prompt-box">
+                                    <pre>Create a personalized learning path for a student in [COURSE NAME] based on 
+their profile:
+
+Current knowledge level: [LEVEL]
+Strengths: [LIST]
+Areas needing improvement: [LIST]
+Learning goals: [GOALS]
+
+Generate a 4-week learning path that includes:
+- Week-by-week learning objectives
+- Specific readings from the course materials
+- Practice exercises tailored to their needs
+- A mini-project that applies their learning
+- Checkpoints for self-assessment
+
+Make the path challenging but achievable, with clear progression.</pre>
+                                </div>
+                            </div>
+                            <div class="case-section">
+                                <h4>✅ The Outcome</h4>
+                                <p>
+                                    Students reported feeling more engaged and appropriately challenged. 
+                                    Course completion rates improved, and students appreciated the 
+                                    personalized approach to their learning journey.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="browse" class="section">
+            <div class="container">
+                <h2>Browse All Prompts</h2>
+                <p class="section-intro">
+                    Access our complete collection of faculty-submitted prompts with full context. 
+                    The library is searchable and filterable by department, challenge type, and course level.
+                </p>
+                <div class="browse-card">
+                    <div class="browse-icon">📚</div>
+                    <h3>Google Sheet Repository</h3>
+                    <p>
+                        Our complete prompt library is maintained in a Google Sheet where you can:
+                    </p>
+                    <ul>
+                        <li>Browse all submissions with full context</li>
+                        <li>Filter by department, course level, or challenge type</li>
+                        <li>Search for specific use cases</li>
+                        <li>See what your colleagues are doing</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" id="sheet-link" target="_blank">
+                        Open Prompt Library Sheet
+                    </a>
+                    <p class="note">
+                        <em>Note: Update the link above with your actual Google Sheet URL after setup</em>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="submit" class="section section-alt">
+            <div class="container">
+                <h2>Submit Your Prompt</h2>
+                <p class="section-intro">
+                    Share your AI prompt with the community! Include the context, challenge, and outcome 
+                    so others can learn from your experience.
+                </p>
+                <div class="submit-card">
+                    <div class="submit-icon">✍️</div>
+                    <h3>Contribute to the Library</h3>
+                    <p>
+                        Use the form below to submit your prompt. Your submission will be reviewed and 
+                        added to our shared library. All submissions should include:
+                    </p>
+                    <ul>
+                        <li><strong>Context:</strong> What course/discipline and what problem were you solving?</li>
+                        <li><strong>Challenge:</strong> What specific challenge did you face?</li>
+                        <li><strong>Prompt:</strong> The actual prompt you used (or a template version)</li>
+                        <li><strong>Outcome:</strong> What were the results? What worked well?</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" id="form-link" target="_blank">
+                        Submit Your Prompt
+                    </a>
+                    <p class="note">
+                        <em>Note: Update the link above with your actual Google Form URL after setup</em>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                SAIL Prompt Library | Suffolk University Sawyer Business School
+            </p>
+            <p class="footer-links">
+                <a href="https://canvas.suffolk.edu/courses/15628" target="_blank">Canvas Resources</a> |
+                <a href="mailto:harslan@suffolk.edu">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
