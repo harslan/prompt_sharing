@@ -62,15 +62,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 displaySubmissions(allSubmissions);
                 setupFilters();
             } else {
-                submissionsContainer.innerHTML = `
-                    <div class="no-results">
-                        <strong>No submissions yet</strong>
-                        <p>Be the first to share your prompt with the community!</p>
-                        <p style="margin-top: 1rem;">
-                            <a href="#submit" class="btn btn-primary">Submit Your Prompt</a>
-                        </p>
-                    </div>
+                // Show sample submissions for demonstration
+                allSubmissions = getSampleSubmissions();
+                displaySubmissions(allSubmissions);
+                setupFilters();
+                
+                // Add note that these are samples
+                const note = document.createElement('div');
+                note.className = 'sample-note';
+                note.style.cssText = 'text-align: center; padding: 1rem; margin: 2rem 0; background: #e8f4f8; border-radius: 8px; border-left: 4px solid var(--primary-color);';
+                note.innerHTML = `
+                    <strong>📝 Sample Submissions</strong>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">
+                        These are example submissions to demonstrate the display. 
+                        Real submissions from faculty will appear here automatically.
+                    </p>
                 `;
+                submissionsContainer.insertBefore(note, submissionsContainer.firstChild);
             }
         })
         .catch(error => {
@@ -217,6 +225,37 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (e) {
             return dateString;
         }
+    }
+    
+    function getSampleSubmissions() {
+        return [
+            {
+                'Timestamp': new Date().toISOString(),
+                'Email Address': 'faculty1@suffolk.edu',
+                'Your Name': 'Dr. Sarah Johnson',
+                'Department': 'Management',
+                'Course Name/Number': 'MGT 320 - Business Ethics',
+                'Challenge/Problem': 'Students in my business ethics course were struggling to engage with multiple perspectives on complex ethical dilemmas. Traditional discussion formats weren\'t generating the depth of analysis needed, and students often defaulted to surface-level responses.',
+                'Your Approach': 'I created an AI "student" persona that takes a specific position on ethical issues. Students must engage with this AI character, challenge its reasoning, and defend alternative viewpoints. This forces them to think more critically and articulate their positions more clearly.',
+                'The Prompt': 'You are a business student in an ethics course who strongly believes that [SPECIFIC POSITION]. When presented with ethical dilemmas, you always argue from this perspective. Your responses should:\n- Be well-reasoned but somewhat narrow in scope\n- Challenge students to think beyond your position\n- Ask probing questions that reveal assumptions\n- Occasionally concede points when students make compelling arguments\n\nEngage with the following scenario: [SCENARIO]',
+                'Outcome/Results': 'Students reported much deeper engagement with ethical reasoning. The AI\'s consistent perspective forced them to articulate their own positions more clearly. Class discussions became more structured and substantive. I noticed students were better prepared for exams and could apply ethical frameworks more effectively.',
+                'Category': 'Learning Activities',
+                'Additional Notes (Optional)': 'I use this in both synchronous and asynchronous formats. For online courses, students can engage with the AI between class sessions, which extends learning beyond the classroom.'
+            },
+            {
+                'Timestamp': new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(), // 7 days ago
+                'Email Address': 'faculty2@suffolk.edu',
+                'Your Name': 'Prof. Michael Chen',
+                'Department': 'ISOM',
+                'Course Name/Number': 'ISOM 330 - Data Analytics',
+                'Challenge/Problem': 'Providing detailed, rubric-aligned feedback on student assignments was extremely time-consuming. With 40+ students per section, I was spending 8-10 hours per assignment just on feedback. I needed a way to generate initial feedback that I could review and personalize.',
+                'Your Approach': 'I developed a prompt that uses the course rubric as the evaluation framework. The AI generates structured feedback that I can then review, edit, and personalize before sending to students. This maintains quality while dramatically reducing time spent.',
+                'The Prompt': 'You are an expert teaching assistant helping to provide feedback on student work. Use the following rubric to evaluate this assignment:\n\n[RUBRIC CRITERIA]\n\nFor each criterion, provide:\n1. A specific strength observed\n2. A specific area for improvement\n3. A concrete suggestion for enhancement\n\nStudent submission:\n[STUDENT WORK]\n\nFormat your feedback as a constructive, encouraging review that helps the student understand both what they did well and how to improve.',
+                'Outcome/Results': 'I saved 40-60% of time on initial feedback generation while maintaining quality. The rubric-based approach ensured consistency across all student evaluations. Students appreciated the detailed, structured feedback. I now have more time to focus on higher-level course improvements and one-on-one student support.',
+                'Category': 'Assessment',
+                'Additional Notes (Optional)': 'I still review every piece of feedback before sending it. The AI helps with the initial draft, but I add personal touches and address specific student needs. This hybrid approach works really well.'
+            }
+        ];
     }
 });
 
