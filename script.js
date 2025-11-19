@@ -53,14 +53,31 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add explicit click handlers to ensure links work
     if (sheetLink) {
         sheetLink.addEventListener('click', function(e) {
-            // Let the default behavior happen (open in new tab)
-            // This ensures it works even if there are any issues
+            // Use window.open as fallback if target="_blank" doesn't work
+            if (!this.href || this.href === '#') {
+                e.preventDefault();
+                return;
+            }
+            // If the link doesn't open, try window.open
+            const opened = window.open(this.href, '_blank');
+            if (!opened) {
+                // Pop-up blocked, show message
+                alert('Please allow pop-ups for this site, or click the link below to open the sheet directly.');
+            }
         });
     }
     
     if (formLink) {
         formLink.addEventListener('click', function(e) {
-            // Let the default behavior happen (open in new tab)
+            // Use window.open as fallback if target="_blank" doesn't work
+            if (!this.href || this.href === '#') {
+                e.preventDefault();
+                return;
+            }
+            const opened = window.open(this.href, '_blank');
+            if (!opened) {
+                alert('Please allow pop-ups for this site, or click the link below to open the form directly.');
+            }
         });
     }
 });
